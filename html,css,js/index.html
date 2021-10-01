@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- just some tags and libraries, don't need to worry about these -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    
+
+    <link rel="shortcut icon" href="styling/img/wa.ico">
+
+
+    <!-- here we use jquery which a library for javascript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+
+    <!-- bootstrap for styling, but jquery must be included first -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+    <!-- css for styling -->
+    <link href="styling/style.css" type="text/css" rel="stylesheet" />
+    <title>WASM Calculator</title>
+    
+</head>
+<body>
+    
+    <div class="container">
+
+
+        <div class="navbar d-flex justify-content-center">
+          <a href="https://webassembly.org/getting-started/developers-guide/">
+            <img src="styling/img/WebAssembly.png" alt="WASM logo" id="logo" class="d-flex justify-content-center">
+        </a>
+          <h1 class="col-12 d-flex justify-content-center">WebAssembly Basic Calculator</h1>
+          <span id="description" class="d-flex justify-content-center description mt-3">
+              Perform basic operations using WebAssembly. Make sure to open this HTML file in a local server. The files used for this page include comments with explanations, be sure to read those. 
+              They can be found in the link below:
+          </span>
+
+          
+        </div>
+        <span class="d-flex justify-content-center description">
+              <a id="git-link" href="https://github.com/mp-github-acc/WebAssemblyTutorial">Visit GitHub page</a>  
+        </span>
+        
+            <div class="row py-5 ">
+
+
+
+                <div class="col-5 card"><!-- ADD start-->
+                    <h2 class="card-header subheading">Addition</h2>
+                    <div class="row card-body">
+                        <div class="col-12">
+                            <div class="form-group col-12">
+                                <label for="a1">Input first number: </label>
+                                <input type="number" name="a1" id="a1" value="2" class="form-control" />
+                                <!-- input field is where we grab the values from for calculating -->
+                            </div>
+                            <div class="form-group col-12">
+                                <label for="a2">Input second number: </label>
+                                <input type="number" name="a2" id="a2" value="2" class="form-control" />
+                                <!-- input field is where we grab the values from for calculating -->
+                            </div>
+
+                            <div class="form-group col-12 pt-3">
+                                <button onclick="addResult()" class="btn btn-info form-control">Calculate <i class="fa fa-angle-right"></i></button>
+                                <!-- when button is pressed, the respective function is called in the javascript file -->
+                            </div>
+
+                            <div class="form-group col-12 d-flex justify-content-center">
+                                <span class="result">RESULT:<span id="addResult" class="col-12">4</span></span>
+                                <!-- this is where we show the results -->
+                                <!-- current value is just a placeholder -->
+                            </div>                        
+                        </div>
+                        
+                    </div>
+                </div><!-- ADD end -->
+
+
+                <div class="col-5 card"><!-- SUB start-->
+                    <h2 class="card-header subheading">Subtraction</h2>
+                    <div class="row card-body">
+                        <div class="col-12">
+                            <div class="form-group col-12">
+                                <label for="s1">Input first number: </label>
+                                <input type="number" name="s1" id="s1" value="5" class="form-control" />
+                                <!-- input field is where we grab the values from for calculating -->
+                            </div>
+                            <div class="form-group col-12">
+                                <label for="s2">Input second number: </label>
+                                <input type="number" name="s2" id="s2" value="4" class="form-control" />
+                                <!-- input field is where we grab the values from for calculating -->
+                            </div>
+
+                            <div class="form-group col-12 pt-3">
+                                <button onclick="subResult()" class="btn btn-info form-control">Calculate <i class="fa fa-angle-right"></i></button>
+                                <!-- when button is pressed, the respective function is called in the javascript file -->
+                            </div>
+
+                            <div class="form-group col-12 d-flex justify-content-center">
+                                <span class="result">RESULT:<span id="subResult" class="col-12">1</span></span>
+                                <!-- this is where we show the results -->
+                                <!-- current value is just a placeholder -->
+                            </div>                        
+                        </div>
+                        
+                    </div>
+                </div><!-- SUB end -->
+
+
+                <div class="col-5 card"><!-- DIV start-->
+                    <h2 class="card-header subheading">Division</h2>
+                    <div class="row card-body">
+                        <div class="col-12">
+                            <div class="form-group col-12">
+                                <label for="d1">Input first number: </label>
+                                <input type="number" name="d1" id="d1" value="6" class="form-control" />
+                                <!-- input field is where we grab the values from for calculating -->
+                            </div>
+                            <div class="form-group col-12">
+                                <label for="d2">Input second number: </label>
+                                <input type="number" name="d2" id="d2" value="2" class="form-control" />
+                                <!-- input field is where we grab the values from for calculating -->
+                            </div>
+
+
+                            <div class="form-group col-12 pt-3">
+                                <button onclick="divResult()" class="btn btn-info form-control">Calculate <i class="fa fa-angle-right"></i></button>
+                                <!-- when button is pressed, the respective function is called in the javascript file -->
+                            </div>
+
+                            <div class="form-group col-12 d-flex justify-content-center">
+                                <span class="result">RESULT:<span id="divResult" class="col-12">3</span></span>
+                                <!-- this is where we show the results -->
+                                <!-- current value is just a placeholder -->
+                            </div>                        
+                        </div>
+                        
+                    </div>
+                </div><!-- DIV end -->
+
+
+                <div class="col-5 card"><!-- MUL start-->
+                    <h2 class="card-header subheading">Multiplication</h2>
+                    <div class="row card-body">
+                        <div class="col-12">
+                            <div class="form-group col-12">
+                                <label for="m1">Input first number: </label>
+                                <input type="number" name="m1" id="m1" value="5" class="form-control" />
+                                <!-- input field is where we grab the values from for calculating -->
+                            </div>
+                            <div class="form-group col-12">
+                                <label for="m2">Input second number: </label>
+                                <input type="number" name="m2" id="m2" value="5" class="form-control" />
+                                <!-- input field is where we grab the values from for calculating -->
+                            </div>
+
+
+                            <div class="form-group col-12 pt-3">
+                                <button onclick="mulResult()" class="btn btn-info form-control">Calculate <i class="fa fa-angle-right"></i></button>
+                                <!-- when button is pressed, the respective function is called in the javascript file -->
+                            </div>
+
+                            <div class="form-group col-12 d-flex justify-content-center">
+                                <span class="result">RESULT:<span id="mulResult" class="col-12">25</span></span>
+                                <!-- this is where we show the results -->
+                                <!-- current value is just a placeholder -->
+                            </div>                        
+                        </div>
+                        
+                    </div>
+                </div><!-- MUL end -->
+
+
+
+
+
+
+
+
+
+
+
+
+             </div><!-- END ROW -->
+
+             <div id="footer-space"></div>
+
+    </div>
+
+
+
+    <!-- include the javascript file... Kind of important :) -->
+    <script src="script.js"></script>
+</body>
+</html>

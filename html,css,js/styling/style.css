@@ -1,0 +1,151 @@
+/*declare fonts*/
+@font-face {
+	font-family: 'RobotoReg';
+	src: url('fonts/roboto/Roboto-Regular.ttf') format('truetype');}
+
+@font-face {
+	font-family: 'Cocomat';
+	src: url('fonts/cocomat/Cocomat_Light-trial.ttf') format('truetype');
+}
+
+/*some colours declared as variables*/
+:root{
+	--oldlightgrey:  #333333;
+	--olddarkgrey:  #121212;
+	--darkgrey:  #1F1F1F;
+	--lightgrey:  #707070;
+	--greytext:  rgba(255,255,255, 0.7);
+	--WA: #654ff0;
+}
+
+
+/*the rest is just styling, not much else to see here*/
+
+h1{
+	font-family: 'Cocomat', sans-serif;
+	color: var(--WA);
+	text-transform: uppercase;
+}
+
+
+body{
+	background-color: var(--darkgrey);
+}
+
+.card{
+	background-color: var(--lightgrey);
+
+}
+
+.subheading{
+	font-family: 'Cocomat', sans-serif;
+	color: var(--WA);
+	text-align: center;
+}
+
+label{
+	font-family: 'RobotoReg', sans-serif;
+	color: white;
+}
+
+.result{
+	font-family: 'RobotoReg', sans-serif;
+	color: white;
+	font-weight:  bold;
+}
+
+
+div.card-body{
+	font-family: 'RobotoReg', sans-serif;
+	color: var(--WA);
+	background-color: var(--lightgrey);
+}
+
+
+.description{
+	font-family: 'RobotoReg', sans-serif;
+	font-size: 1.2em;
+	color: white;
+	text-align: center;	
+}
+
+#description{
+	width: 50em;
+}
+
+#logo {
+	margin-top:10px;
+	width: 200px;
+}
+
+#logo:hover{
+  animation: wiggle 2s ease;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+  
+}
+
+
+@keyframes wiggle {
+  20%  { transform: translateX(5px);  }
+  40%  { transform: translateX(-5px); }
+  60%  { transform: translateX(3px);  }
+  80%  { transform: translateX(-2px); }
+  100% { transform: translateX(0);    }
+ }
+
+body::-webkit-scrollbar {
+  width: 1em;
+}
+ 
+body::-webkit-scrollbar-track {
+  background-color: #333333;
+}
+ 
+body::-webkit-scrollbar-thumb {
+  background-color: var(--WA);
+}
+
+.card{
+	background-color: var(--darkgrey);
+	border: 3px solid var(--WA);
+	margin: 2em;
+}
+
+#footer-space{
+	height: 10em;
+}
+
+i.fa{
+	margin-left: 0.5em;
+}
+
+i.fa{
+	transition: all 0.5s;
+}
+
+.btn:hover i.fa{
+	margin-left: 1.5em;
+	transform: translateX(5px);
+	transition: all 0.5s;
+	color: white;
+}
+
+.btn:hover{
+	background-color: var(--WA);
+	transition: all 0.5s;
+	color: white;
+}
+
+.btn{
+	background-color: var(--WA);
+	border: none;
+	color: black;
+	text-align: center;
+	transition: all 0.5s;
+}
+
+#git-link{
+	color: var(--WA);
+}
+
